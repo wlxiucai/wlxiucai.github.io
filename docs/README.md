@@ -1,3 +1,3 @@
-# Headline
-
-> An awesome project.
+- [Home](/)
+- [程序员的自我修养](/computer/程序员的自我修养.html)
+- [使用手册](https://angry-swanson-b4e47b.netlify.app/zh-cn/configuration)
