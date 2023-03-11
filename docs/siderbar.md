@@ -1,2 +1,2 @@
 * 计算机
-  * [程序员的自我修养](/computer/程序员的自我修养.html)
+  * [程序员的自我修养](/computer/The self-cultivation of programmers.html)
