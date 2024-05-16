@@ -1,3 +1,96 @@
 <head>
 <meta http-equiv="refresh" content="0;url='docs/index.html'">
 </head>
+
+<script>
+    window.$docsify = {
+        // 开启busuanzi
+        busuanzi: true,
+        // gitalk评论
+        gitalk: {
+            clientID: 'Ov23ctLE0R7sCZyl6aX5',
+            clientSecret: 'c9ede28ec1e49d879cc55c3b1b6cd887bea3c23c',
+            repo: 'docsify-wlxc',
+            owner: 'wlxc',
+            admin: ['wlxc']
+        },
+        markdown: {
+            renderer: {
+                code: function (code, lang) {
+                if (lang === 'drawio') {
+                    if (window.drawioConverter) {
+                    console.log('drawio 转化中')
+                    return window.drawioConverter(code)
+                    } else {
+                    return `<div class='drawio-code'>${code}</div>`
+                    }
+                } else {
+                    return this.origin.code.apply(this, arguments);
+                }
+                }
+            }
+        },
+        search: 'auto', // default
+  
+        search: [
+            // '/',            // => /README.md
+            // '/guide',       // => /guide.md
+            // '/get-started', // => /get-started.md
+            // '/zh-cn/',      // => /zh-cn/README.md
+            'docs',
+        ],
+  
+        // complete configuration parameters
+        search: {
+            maxAge: 86400000, // Expiration time, the default one day
+            paths: [], // or 'auto'
+            placeholder: 'Type to search',
+    
+            // Localization
+            placeholder: {
+            '/docs/': '在文档中搜索',
+            '/': '搜索',
+            },
+    
+            noData: 'No Results!',
+    
+            // Localization
+            noData: {
+            '/docs': '找不到结果',
+            '/': '没有相关内容',
+            },
+    
+            // Headline depth, 1 - 6
+            depth: 2,
+    
+            hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+    
+            // To avoid search index collision
+            // between multiple websites under the same domain
+            namespace: 'website-wlxc',
+    
+            // Use different indexes for path prefixes (namespaces).
+            // NOTE: Only works in 'auto' mode.
+            //
+            // When initialiazing an index, we look for the first path from the sidebar.
+            // If it matches the prefix from the list, we switch to the corresponding index.
+            pathNamespaces: ['/docs', '/'],
+    
+            // You can provide a regexp to match prefixes. In this case,
+            // the matching substring will be used to identify the index
+            // pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/,
+        },
+    };
+</script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-drawio/viewer.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/docsify-drawio/drawio.js'></script>
+<!-- GitTalk评论 -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script src="https://unpkg.com/docsify-gitalk@1.0.0/dist/docsify-gitalk.min.js"></script>
+<!-- 开启busuanzi -->
+<script src="https://unpkg.com/docsify-busuanzi@1.0.1/dist/docsify-busuanzi.min.js"></script>
